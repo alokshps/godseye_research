@@ -150,3 +150,9 @@ EMAIL_HOST_USER = 'godseye.research@gmail.com'
 EMAIL_HOST_PASSWORD = 'mahadev05021995'
 EMAIL_USE_TLS=True
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
