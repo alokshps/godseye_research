@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'l$6b^&+j!fba1fq3&nq0-ix@#d-s(7)x)mk_l!&)ik0v=sp6pw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -149,3 +149,4 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'godseye.research@gmail.com'
 EMAIL_HOST_PASSWORD = 'mahadev05021995'
 EMAIL_USE_TLS=True
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
