@@ -1,0 +1,86 @@
+{% extends 'base.html' %} {% block content %}
+{% include 'partials/_sticky.html' %}
+
+
+<section id="showcase-inner" class="py-5 text-white">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h1 class="display-4">Press Release</h1>
+        <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% for room in rooms %}
+          <div>
+            <hr>
+            <a href="{% url 'post' %}">
+            <h5>{{ room.title }}</h5>
+            </a>
+            <p>
+              
+            </p>
+            <p>
+              {{ room.text|linebreaksbr }}
+            </p>
+            <span>
+                {{ room.published_date }}
+              </span>
+            
+          </div>
+          {% endfor %}
+        </div>
+  
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary btn-lg btn-block check-btn" style="border-radius: 0.15rem;text-align: left;">
+                <i class="far fa-check-square"></i>
+                <span>Browse our Reports</span>
+              </button>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">
+                  Automotive Reports
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">Electronics & Semiconductor</a>
+                <a href="#" class="list-group-item list-group-item-action">Telecom & IT</a>
+                <a href="#" class="list-group-item list-group-item-action">Software  & IT</a>
+                <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Consumer Goods</a>
+                <a href="#" class="list-group-item list-group-item-action">Health Care</a>
+                <a href="#" class="list-group-item list-group-item-action">Food & Beverages</a>
+                <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+              </div>
+          <!-- <div>
+            <button type="button" class="btn btn-primary btn-lg btn-block check-btn" style="border-radius: 0.15rem;text-align: left;">
+              <i class="far fa-check-square"></i>
+              <span>Primary</span>
+            </button>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
