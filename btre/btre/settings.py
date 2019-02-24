@@ -19,10 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'l$6b^&+j!fba1fq3&nq0-ix@#d-s(7)x)mk_l!&)ik0v=sp6pw'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = []
@@ -143,13 +140,13 @@ MEDIA_URL = '/media/'
 
 # Email Configration
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'godseye.research@gmail.com'
-EMAIL_HOST_PASSWORD = 'mahadev05021995'
-EMAIL_USE_TLS=True
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'godseye.research@gmail.com'
+# EMAIL_HOST_PASSWORD = 'mahadev05021995'
+# EMAIL_USE_TLS=True
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 try:
