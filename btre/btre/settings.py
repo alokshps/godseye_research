@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 SECRET_KEY = 'l$6b^&+j!fba1fq3&nq0-ix@#d-s(7)x)mk_l!&)ik0v=sp6pw'
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['134.209.64.47']
 
@@ -40,12 +40,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+#     'whitenoisewhitenoise.runserver_nostatic',
+
 
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+#     'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -130,6 +134,8 @@ STATICFILES_DIRS = [
 
 
 ]
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 STATIC_URL = '/static/'
 
@@ -140,12 +146,12 @@ MEDIA_URL = '/media/'
 
 # Email Configration
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'godseye.research@gmail.com'
-# EMAIL_HOST_PASSWORD = 'mahadev05021995'
-# EMAIL_USE_TLS=True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'godseye.research@gmail.com'
+EMAIL_HOST_PASSWORD = 'mahadev05021995'
+EMAIL_USE_TLS=True
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
