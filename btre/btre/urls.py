@@ -23,6 +23,8 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('pressroom/', include('pressroom.urls')),
     path('contacts/', include('contacts.urls')),
+    path('accounts/', include('accounts.urls')),
+
 
 
 
