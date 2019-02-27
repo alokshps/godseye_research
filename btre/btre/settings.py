@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'pressroom.apps.PressroomConfig',
     'contacts.apps.ContactsConfig',
+    'accounts.apps.AccountsConfig',
+
     'listings.apps.ListingsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -85,7 +87,7 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'btredb',
         'USER': 'postgres',
         'PASSWORD': '123456',
@@ -160,3 +162,9 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+# Messages Tags
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
