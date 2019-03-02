@@ -20,6 +20,9 @@
           
           <a class="nav-link" style="text-transform: none;" href="{% url 'index' %}">Home</a>
         </li>
+        <!-- <li {% if 'about' in request.path %} class="nav-item active ml-3" {% else %} class="nav-item ml-3" {% endif %}>
+          <a style="text-transform: none;" class="nav-link" href="{% url 'about' %}"> About</a>
+        </li> -->
         <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
           <a style="text-transform: none;" class="nav-link" href="{% url 'about' %}">About</a>
         </li>
@@ -27,7 +30,7 @@
         <li {% if 'blog' in request.path %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
           <a style="text-transform: none;" class="nav-link" href="{% url 'post_list' %}">Blogs</a>
         </li>
-        <li {% if 'Research Reports' in request.path %} class="nav-item active ml-auto" {% else %} class="nav-item mr-3 ml-auto"
+        <li {% if 'Research Reports' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3 ml-auto"
           {% endif %}>
 
           <div class="dropdown">
@@ -44,22 +47,59 @@
               <a style="text-transform: none;" class="dropdown-item" href="#">Consumer Goods</a>
               <a style="text-transform: none;" class="dropdown-item" href="#">Health Care</a>
               <a style="text-transform: none;" class="dropdown-item" href="#">Food & Beverages</a>
+            </div>
           </div>
-
             <!--  Press Release-->
-        <li {% if 'pressroom' in request.path %} class="nav-item active ml-3" {% else %} class="nav-item ml-3" {% endif %}>
+        <!-- <li {% if 'pressroom' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item ml-3" {% endif %}>
           <a style="text-transform: none;" class="nav-link" href="{% url 'press_room' %}">Press Release</a>
-        </li>
+        </li> -->
         <!-- Carts -->
-        <li {% if 'about' in request.path %} class="nav-item active ml-3" {% else %} class="nav-item ml-3" {% endif %}>
-          <a style="text-transform: none;" class="nav-link" href="{% url 'about' %}">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
+        <!-- <li {% if 'about' in request.path %} class="nav-item active ml-3" {% else %} class="nav-item ml-3" {% endif %}>
+          <a style="text-transform: none;" class="nav-link" href="{% url 'about' %}"> About</a>
+        </li> -->
+        <li class="navbar-nav ml-auto">
+               {% if user.is_authenticated %}
+                 <li
+                 {% if 'dashboard' in request.path %}
+                   class="nav-item active mr-3"
+                 {% else %}
+                   class="nav-item mr-3"
+                 {% endif %}
+                 >
+                   <a style="text-transform: none;" class="nav-link" href="{% url 'dashboard' %}">{{ user.username }} <i class="fas fa-shopping-cart"></i></a>
+                 </li>
+                 <li class="nav-item mr-3 text-right">
+                   <a style="text-transform: none;" href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+                     <i class="fas fa-sign-out-alt"></i> Logout
+                   </a>
+                   <form action="{% url 'logout' %}" method="POST" id="logout">
+                     {% csrf_token %}
+                     <input type="hidden"> 
+                   </form>
+                 </li>
+               {% else %}
+                 <li
+                 {% if 'register' in request.path %}
+                   class="nav-item active mr-3"
+                 {% else %}
+                   class="nav-item mr-3"
+                 {% endif %}
+                 >
+                   <a style="text-transform: none;" class="nav-link" href="{% url 'register' %}">
+                     <i class="fas fa-user-plus"></i> Register</a>
+                 </li>
+                 <li
+                 {% if 'login' in request.path %}
+                   class="nav-item active mr-3"
+                 {% else %}
+                   class="nav-item mr-3"
+                 {% endif %}
+                 >
+                   <a style="text-transform: none;" class="nav-link" href="{% url 'login' %}">
+                     <i class="fas fa-sign-in-alt"></i> Login</a>
+                 </li>
+                 {% endif %}
         </li>
     </div>
-    </li>
-    </ul>
-    </ul>
-  </div>
   </div>
 </nav>
